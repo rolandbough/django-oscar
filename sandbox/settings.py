@@ -1,6 +1,7 @@
 import os
 import environ
 import oscar
+import django_heroku
 
 env = environ.Env()
 
@@ -436,3 +437,6 @@ try:
     from settings_local import *
 except ImportError:
     pass
+
+# Activate Django-Heroku.
+django_heroku.settings(locals())
